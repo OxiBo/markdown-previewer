@@ -1,0 +1,64 @@
+$mainColor: #6B8E23;
+$textColor: #556B2F;
+
+
+body {
+    background: lighten($mainColor, 30%);
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    border: none;
+    color: darken($textColor, 25%);
+}
+
+div.editor-header {
+    display: flex;
+    align-items: center;
+    padding: 5px 20px;
+    background: lighten($mainColor, 10%);
+    border-bottom: 2px solid darken($mainColor, 20%);
+    box-shadow: 2px 5px 5px 4px rgba(0, 0, 0, 0.6);
+}
+
+.expanded {
+    width: 95%;
+    min-height: 95vh;
+    margin: 25px auto 25px auto;
+    box-shadow: 13px 8px 14px 0px rgba(0, 0, 0, 0.7);
+}
+
+i {
+    margin-left: auto;
+}
+
+i:hover {
+    color: #F0E68C;
+}
+
+code{
+    background:white;
+    // display: block;
+    padding: 3px;
+    margin: 3px;
+}
+
+pre{
+    display: block;
+    background: white;
+}
+
+table {
+    border-collapse:  collapse;
+}
+
+table, th, td {
+ border: 2px solid darken($mainColor, 20%);
+ padding: 3px 5px;
+}
+
+img{
+    max-width: 100%;
+}

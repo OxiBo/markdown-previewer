@@ -1,0 +1,25 @@
+div.previewer-container {
+    background: lighten($mainColor, 60%);
+    margin: 25px auto 25px auto;
+    border: none;
+    box-shadow: 13px 8px 14px 0px rgba(0, 0, 0, 0.7);
+    border: 2px solid darken($mainColor, 20%);
+}
+
+.normal-previewer {
+    width: 95%;
+    min-height: 300px;
+}
+
+div#preview {
+    background: lighten($mainColor, 60%);
+    padding: 10px 30px 10px 30px;
+    width: 100%;
+}
+
+
+@media only screen and (min-width: 650px) {
+    .normal-previewer {
+        width: 75%;
+    }
+}

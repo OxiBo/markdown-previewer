@@ -1,0 +1,13 @@
+body {
+  background: mistyrose; }
+
+textarea#editor {
+  margin: 5px auto 5px auto; }
+
+div#preview {
+  margin: 5px auto 5px auto;
+  width: 30%;
+  height: 30%;
+  box-shadow: 13px 8px 14px 0px rgba(0, 0, 0, 0.99); }
+
+/*# sourceMappingURL=styles.css.map */
