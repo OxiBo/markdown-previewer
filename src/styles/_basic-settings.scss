@@ -48,6 +48,8 @@ code{
 pre{
     display: block;
     background: white;
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }
 
 table {
