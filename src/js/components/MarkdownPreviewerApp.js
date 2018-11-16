@@ -11,10 +11,21 @@ export default class MarkdownPreviewerApp extends React.Component {
         expandPreviewer: false,
     }
 
-    handleGetInput = (value) => {
+    handleGetInput = (e) => {
+        const input = e.target.value;
         this.setState(() => ({
-            input: value,
+            input: input,
         }))
+    }
+
+     getMarkdownText = () => {
+        // to have links open in a new tab
+        const renderer = new marked.Renderer();
+        renderer.link = (href, title, text) => `<a target="_blank" href="${ href }" title="${ title }">${ text }</a>`;
+
+        const rawMarkup = marked(this.state.input, { renderer: renderer, breaks: true, tables: true, sanitize: true });
+
+        return { __html: rawMarkup };
     }
 
     handleClickEditor = () => {
@@ -37,7 +48,7 @@ export default class MarkdownPreviewerApp extends React.Component {
             expandPreviewer={this.state.expandPreviewer}
             handleClickEditor={this.handleClickEditor}/>
             <Previewer
-            previewText={this.state.input}
+            getMarkdownText={this.getMarkdownText}
             expandPreviewer={this.state.expandPreviewer}
             expandEditor={this.state.expandEditor}
             handleClickPreviewer={this.handleClickPreviewer}
@@ -79,6 +90,7 @@ And feel free to go crazy ~~crossing stuff out~~.
 There's also [links](https://www.freecodecamp.com), and
 > Block Quotes!
 
+Heres some code, \`<div></div>\`, between 2 backticks.
 
 1. And there are numbererd lists too.
 1. Use just 1s if you want!
